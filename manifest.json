@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "LinkedIn Connection Finder",
+  "version": "1.0",
+  "description": "Sign in to LinkedIn and retrieve connections for job postings.",
+  "permissions": [
+      "identity",
+      "tabs",
+      "storage",
+      "activeTab"
+  ],
+  "browser_action": {
+      "default_popup": "popup.html"
+  },
+  "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+  }
+}

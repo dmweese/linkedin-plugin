@@ -10,8 +10,8 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
           body: new URLSearchParams({
               grant_type: "authorization_code",
               code: authCode,
-              client_id: "78rfi1kptel4t3",
-              client_secret: "WPL_AP1.Uv72AskLGHXe93UU.CJz6RQ==",
+              client_id: "#", //replace with os.environ
+              client_secret: "#", //replace with os.environ
               redirect_uri: "https://dmweese.github.io/oauth/"
           })
       })

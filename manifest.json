@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "LinkedIn Connection Finder",
   "version": "1.0",
-  "description": "Sign in to LinkedIn and retrieve connections for job postings.",
+  "description": "Use ",
   "permissions": [
       "identity",
       "tabs",

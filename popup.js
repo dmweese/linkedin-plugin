@@ -1,8 +1,11 @@
-document.getElementById("linkedinSignIn").addEventListener("click", () => {
-  const clientId = "78rfi1kptel4t3";
-  const redirectUri = "https://dmweese.github.io/oauth/";
-  const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=openid%20profile%20email`;
+document.getElementById("extractHTML").addEventListener("click", () => {
+  browser.tabs.query({active: true, currentWindow: true}).then((tabs) => {
+    browser.tabs.sendMessage(tabs[0].id, { action: "extractHTML"})
+  })
+})
 
-  // Open LinkedIn login page
-  browser.tabs.create({ url: authUrl });
-});
+browser.runtime.onMessage.addListener((message) => {
+  if (message.html) {
+    document.getElementById("output").innerHTML = message.html
+  }
+})

@@ -1,4 +1,6 @@
-(() => {
-    let pageHTML = document.documentElement.outerHTML; // Get full page HTML
-    browser.runtime.sendMessage({ action: "extractHTML", data: pageHTML });
-})();
+browser.runtime.onMessage.addListener((message) => {
+    if(message.action == "extractHTML"){
+        let pageHTML = document.documentElement.outerHTML; 
+        browser.runtime.sendMessage({ action: "extracted", html: pageHTML})
+    }
+})
